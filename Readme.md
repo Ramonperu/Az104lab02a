@@ -93,7 +93,7 @@ Y ejecutamos el siguiente comando:
 
 ------
 
-***AD>Users>New User***
+***Home>Azure AD>Users>New User***
 
 Creamos un nuevo usuario
 
@@ -108,15 +108,26 @@ Copiamos el nombre junto con el dominio ya que posteriormente nos hara falta
 
 az104-02-aaduser1@ramonperuoutlook.onmicrosoft.com
 
+<img src="/img/10ºimagenn.png" alt="10ºimagenn" style="zoom:80%;" />
+
 ***Grupos de Administracion>az104-02-mg1> IAM(Control Acceso)>+Add***
 
-
+<img src="/img/11ºimagenn.png" alt="11ºimagenn" style="zoom:80%;" />
 
 Añadimos el rol custom que insertamos anteriormente via powershell dentro de nuestro grupo de administracion y ademas seleccionamos como miembro el ultimo usuario creado.
 
-
+<img src="/img/13ºimagenn.png" alt="13ºimagenn" style="zoom:80%;" />
 
 Comprobamos las limitaciones.
 
+Dentro de una ventana en incognito accedemos con el nuevo usuario, podra ver los **grupos de recursos**
 
+<img src="/img/15ºimagenn.png" alt="15ºimagenn" style="zoom:80%;" />
 
+No podra ver nada dentro de la pestaña **Todos los recursos**
+
+<img src="/img/16ºimagenn.png" alt="16ºimagenn" style="zoom:80%;" />
+
+Creacion de la solicitud de soporte y ayuda
+
+<img src="/img/17ºimagenn.png" alt="17ºimagenn" style="zoom:80%;" />
