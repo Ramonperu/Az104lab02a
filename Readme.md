@@ -1,6 +1,6 @@
 
 
-# LAB 01 - Manage Azure Active Directory Identities
+# LAB 02a - Manage Azure Active Directory Identities
 
 Enero 17 de 2023*, Ramón Peinado Ruiz
 
