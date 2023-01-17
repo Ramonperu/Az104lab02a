@@ -16,6 +16,8 @@ Este laboratorio requiere permisos para crear usuarios de Azure Active Directory
 
 • Task 3: Asignar roles RBAC
 
+• Task 4: Eliminacion de recursos
+
 **Diagrama:**
 
 ------
@@ -69,13 +71,15 @@ El profesor nos ha facilitado este archivo json
 
 
 
-"AssignableScopes": [
+*"AssignableScopes": [*
 
-​    "/providers/Microsoft.Management/managementGroups/az104-02-mg1",
+​    *"/providers/Microsoft.Management/managementGroups/az104-02-mg1",*
 
-​    "/subscriptions/***5097fbdf-333c-428b-821a-e6802b29f570"***
+​    *"/subscriptions/**5097fbdf-333c-428b-821a-e6802b29f570"***
 
 
+
+**Opcionalmente podriamos cambiar el nombre a nuestro gusto.
 
 
 
@@ -131,3 +135,33 @@ No podra ver nada dentro de la pestaña **Todos los recursos**
 Creacion de la solicitud de soporte y ayuda
 
 <img src="/img/17ºimagenn.png" alt="17ºimagenn" style="zoom:80%;" />
+
+### TASK 4:
+
+------
+
+Azure AD> Users>Profile
+
+Copiamos Object ID y abrimos PowerShell para ejecutar el siguiente comando
+
+Object ID: 6cfd1aab-d43b-4f99-8f4b-ac70594bb9db
+
+​    ***$scope = (Get-AzRoleDefinition -Name 'Support Request Contributor (Custom)').AssignableScopes | Where-Object {$_ -like 'managementgroup'}     Remove-AzRoleAssignment -ObjectId '[object_ID]' -RoleDefinitionName 'Support Request Contributor (Custom)' -Scope $scope***
+
+Donde sustituimos [objet_ID] por nuestro numero recien copiado
+
+Despues ejecutamos el comando para borrar el rol:
+
+***Remove-AzRoleDefinition -Name 'Support Request Contributor (Custom)' -Force***
+
+Borramos el usuario desde Azure AD>Users
+
+Por ultimo vamos a Administracion de grupos y reasociamos nuestra suscripcion al tenant root 
+
+***Home>Management Groups>Tenant Root Group> Add Subscription***
+
+<img src="/img/18ºimagenn.png" alt="18ºimagenn" style="zoom:80%;" />
+
+Para borrar por ultimo el grupo de administracion que creamos al principio
+
+<img src="/img/19ºimagenn.png" alt="18ºimagenn" style="zoom:80%;" />
